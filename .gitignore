@@ -1,0 +1,5 @@
+.DS_Store
+
+# Original full-size figure exports (web copies live in assets/)
+*figure.png
+*figure.jpg

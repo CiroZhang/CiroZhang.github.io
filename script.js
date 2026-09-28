@@ -14,7 +14,7 @@ function initTypewriter() {
     if (i < bioText.length) {
       bioEl.insertBefore(document.createTextNode(bioText[i]), cursor);
       i++;
-      setTimeout(typeChar, 18);
+      setTimeout(typeChar, 6);
     } else {
       setTimeout(() => cursor.remove(), 2000);
     }
@@ -39,6 +39,48 @@ function initBootSequence() {
     { text: "[ READY   ] process ready", delay: 1000, class: "boot-ok" }
   ];
 
+  function showMain() {
+    bootElement.style.display = "none";
+    document.body.style.overflow = "auto";
+    mainElement.style.display = "block";
+
+    // Smooth main fade-in (GSAP if available, else instant)
+    if (typeof gsap !== 'undefined') {
+      gsap.fromTo(mainElement, { opacity: 0 }, { opacity: 1, duration: 0.6, ease: 'power2.out' });
+    }
+
+    // Initialize all effects
+    startUptime();
+    initCursorGlow();
+    initNavInteraction();
+    initSystemMonitors();
+    initNeuralNetwork();
+    initGradientDescent();
+    initBinaryRain();
+    initCodeDecorations();
+    initHexFloaters();
+    initAsciiEasterEgg();
+    // WebGL is unavailable on some machines; don't let the background take the page down
+    try { initThreeBackground(); } catch (e) {}
+    initVanillaTilt();
+  }
+
+  // Returning visitors skip the boot animation
+  let seenBoot = false;
+  try {
+    seenBoot = localStorage.getItem("ciro-booted") === "1";
+    localStorage.setItem("ciro-booted", "1");
+  } catch (e) {}
+
+  if (seenBoot) {
+    initAfterBoot();
+    showMain();
+    return;
+  }
+
+  // First visit: post-boot features start shortly before main is revealed
+  setTimeout(initAfterBoot, 3500);
+
   let currentLine = 0;
 
   function typeNextLine() {
@@ -57,30 +99,7 @@ function initBootSequence() {
         bootElement.classList.add("fade-out");
       }, 300);
 
-      setTimeout(() => {
-        bootElement.style.display = "none";
-        document.body.style.overflow = "auto";
-        mainElement.style.display = "block";
-
-        // Smooth main fade-in (GSAP if available, else instant)
-        if (typeof gsap !== 'undefined') {
-          gsap.fromTo(mainElement, { opacity: 0 }, { opacity: 1, duration: 0.6, ease: 'power2.out' });
-        }
-
-        // Initialize all effects
-        startUptime();
-        initCursorGlow();
-        initNavInteraction();
-        initSystemMonitors();
-        initNeuralNetwork();
-        initGradientDescent();
-        initBinaryRain();
-        initCodeDecorations();
-        initHexFloaters();
-        initAsciiEasterEgg();
-        initThreeBackground();
-        initVanillaTilt();
-      }, 1000);
+      setTimeout(showMain, 1000);
     }
   }
 
@@ -1046,7 +1065,7 @@ console.log("%c  Mali-G76 GPU | TPU v5 @ 45 TOPS", "font-size: 12px; color: #a1a
 console.log("%c  8GB LPDDR4X | TensorRT v8.6", "font-size: 12px; color: #a1a1aa;");
 console.log("%c\n🎮 Easter Eggs:", "font-size: 14px; color: #06b6d4; font-weight: bold;");
 console.log("%c  Konami Code: ↑ ↑ ↓ ↓ ← → ← → B A", "font-size: 12px; color: #a1a1aa;");
-console.log("%c\n💻 Built by Ciro Zhang | UCSD '26", "font-size: 12px; color: #8b5cf6;");
+console.log("%c\n💻 Built by Ciro Zhang | Harvard S.M. DS", "font-size: 12px; color: #8b5cf6;");
 console.log("%c  Press ` to open terminal", "font-size: 12px; color: #a1a1aa;");
 
 // ========================================
@@ -1124,13 +1143,15 @@ function initTerminal() {
 
     about: () => {
       return `Ciro Zhang
-B.S. Data Science & CE @ UCSD '26 → S.M. Data Science @ Harvard
+S.M. Data Science @ Harvard · B.S. DS & CE @ UCSD '26
 
-Building ML systems for real-world problems — generative AI
-for gene function prediction, bioluminescence forecasting,
-and computational pathology. Published in Annals of
-Diagnostic Pathology. TAed 600+ students across ML and
-data science courses at UCSD.`;
+Building ML systems end to end: 3D computer vision for
+sports analytics (Birdseye, under review at AAAI),
+vision-language reasoning over pathology slides
+(SlideBank, under review at WACV), and multimodal LLMs
+for genomics. Published in Annals of Diagnostic
+Pathology. TAed 600+ students across ML and data
+science courses at UCSD.`;
     },
 
     contact: () => {
@@ -1138,7 +1159,7 @@ data science courses at UCSD.`;
   Email:    cirozhang@g.harvard.edu
   GitHub:   github.com/CiroZhang
   LinkedIn: linkedin.com/in/ciro-zhang
-  Location: San Diego, CA → Cambridge, MA (Fall 2026)
+  Location: Cambridge, MA
 
   Reach out for research, projects, or opportunities!`;
     },
@@ -1397,17 +1418,17 @@ function initTerminalHintBtn() {
   });
 }
 
-// Initialize new features after boot
-setTimeout(() => {
+// Initialize new features after boot (called from initBootSequence)
+function initAfterBoot() {
   initCodeSnippets();
   initTerminal();
-  initMLMetrics();
   initMobileNav();
   initTerminalHintBtn();
   initGSAPAnimations();
   initEducationTabs();
   initProjectDropdowns();
-}, 3500);
+  initMoreProjects();
+}
 
 // ========================================
 // Three.js Neural Network Background
@@ -1557,7 +1578,8 @@ function initGSAPAnimations() {
   }
 
   // Video cards: fly up with stagger
-  const videoCards = gsap.utils.toArray('.video-card');
+  // Cards in the collapsed "more projects" panel animate on expand instead (see initMoreProjects)
+  const videoCards = gsap.utils.toArray('.video-card').filter((c) => !c.closest('.more-projects'));
   if (videoCards.length) {
     gsap.fromTo(videoCards,
       { y: 70, opacity: 0 },
@@ -1654,6 +1676,31 @@ function initEducationTabs() {
     toggle.addEventListener('click', doToggle);
     toggle.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') doToggle(); });
   }
+}
+
+// ========================================
+// "Show more projects" toggle
+// ========================================
+function initMoreProjects() {
+  const toggle = document.getElementById('more-projects-toggle');
+  const panel = document.getElementById('more-projects');
+  if (!toggle || !panel) return;
+
+  const label = toggle.querySelector('.more-projects-label');
+  const count = panel.querySelectorAll('.video-card').length;
+
+  toggle.addEventListener('click', () => {
+    const open = panel.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+    label.textContent = open ? 'Show fewer projects' : `Show ${count} more projects`;
+    if (open && typeof gsap !== 'undefined') {
+      gsap.fromTo(panel.querySelectorAll('.video-card'),
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: 'power3.out' }
+      );
+    }
+    if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+  });
 }
 
 // ========================================

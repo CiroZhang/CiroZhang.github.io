@@ -2,9 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>ciro.dev - Machine Learning & Embedded Systems</title>
+  <title>Ciro Zhang · ML &amp; Computer Vision</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ciro Zhang - Machine Learning Engineer working at the intersection of ML and embedded systems" />
+  <meta name="description" content="Ciro Zhang: Harvard S.M. Data Science student and ML engineer working on computer vision, multimodal LLMs, and medical imaging." />
+
+  <!-- Link previews (LinkedIn, Slack, iMessage, etc.) -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Ciro Zhang · Machine Learning" />
+  <meta property="og:description" content="Harvard S.M. Data Science student working on machine learning and computer vision." />
+  <meta property="og:url" content="https://cirozhang.github.io/about-me/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%238b5cf6'/%3E%3Ctext x='16' y='22.5' font-family='monospace' font-size='18' font-weight='700' text-anchor='middle' fill='white'%3ECZ%3C/text%3E%3C/svg%3E" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ciro Zhang",
+    "jobTitle": "Machine Learning Engineer",
+    "email": "mailto:cirozhang@g.harvard.edu",
+    "alumniOf": [
+      {"@type": "CollegeOrUniversity", "name": "Harvard University"},
+      {"@type": "CollegeOrUniversity", "name": "University of California San Diego"}
+    ],
+    "sameAs": [
+      "https://github.com/CiroZhang",
+      "https://www.linkedin.com/in/ciro-zhang/",
+      "https://scholar.google.com/citations?user=BTYAUvoAAAAJ"
+    ]
+  }
+  </script>
 
   <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
@@ -31,9 +58,9 @@
   <div class="nav-links">
     <a href="#education">0x2000 /education</a>
     <a href="#experiences">0x3000 /experiences</a>
-    <a href="#teaching">0x4000 /teaching</a>
-    <a href="#publications">0x4500 /publications</a>
+    <a href="#publications">0x4000 /publications</a>
     <a href="#projects">0x5000 /projects</a>
+    <a href="#teaching">0x7000 /teaching</a>
   </div>
   <div class="nav-footer">
     <button class="terminal-hint-btn" id="terminal-hint-btn">
@@ -57,10 +84,9 @@
     <div class="mobile-nav-links">
       <a href="#education">0x2000 /education</a>
       <a href="#experiences">0x3000 /experiences</a>
-      <a href="#teaching">0x4000 /teaching</a>
-      <a href="#publications">0x4500 /publications</a>
-    <a href="#projects">0x5000 /projects</a>
-      <a href="Resume.pdf" download>↓ /resume</a>
+      <a href="#publications">0x4000 /publications</a>
+      <a href="#projects">0x5000 /projects</a>
+      <a href="#teaching">0x7000 /teaching</a>
     </div>
   </div>
 </div>
@@ -109,7 +135,7 @@
   </div>
 
 <p class="reveal delay-3" id="bio-description">
-Hi! I’m Ciro Zhang, a recent UCSD grad (B.S. Data Science & Computer Engineering) heading to Harvard for my S.M. in Data Science this fall. I build machine learning systems that tackle real-world problems — from generative AI for gene function prediction to bioluminescence forecasting on the California coast. I also have a published paper in computational pathology and have TAed 600+ students across ML and data science courses.
+Hi! I'm Ciro. I'm doing my S.M. in Data Science at Harvard, after finishing a B.S. in Data Science &amp; Computer Engineering at UCSD. I mostly work on machine learning, especially computer vision: lately that's meant reconstructing badminton rallies in 3D and helping models reason over pathology slides. I've also spent a lot of time TAing, and every so often I build something just for fun, like a CPU from scratch or a little fish game.
 </p>
   <div class="social-links reveal delay-3">
     <a href="https://github.com/CiroZhang" target="_blank" rel="noopener noreferrer" class="social-link">
@@ -172,21 +198,6 @@ Hi! I’m Ciro Zhang, a recent UCSD grad (B.S. Data Science & Computer Engineeri
   <!-- Binary Rain Container -->
   <div class="binary-rain" id="binary-rain"></div>
 
-  <!-- ML Training Metrics Display -->
-  <div class="ml-metrics">
-    <div class="metric-item">
-      <span class="metric-label">ACCURACY</span>
-      <span class="metric-value" id="accuracy-value">0.0000</span>
-    </div>
-    <div class="metric-item">
-      <span class="metric-label">LOSS</span>
-      <span class="metric-value" id="loss-value">0.0000</span>
-    </div>
-    <div class="metric-item">
-      <span class="metric-label">EPOCH</span>
-      <span class="metric-value" id="epoch-value">0/100</span>
-    </div>
-  </div>
 
   <h2 class="reveal delay-4" id="education">Education <span class="mem-addr">0x2000</span></h2>
   <div class="edu-grid">
@@ -199,8 +210,14 @@ Hi! I’m Ciro Zhang, a recent UCSD grad (B.S. Data Science & Computer Engineeri
         <div class="edu-card-meta">
           <h3>Harvard University</h3>
           <p class="edu-degree">S.M. Data Science</p>
-          <p class="edu-dates">Incoming Fall 2026</p>
+          <p class="edu-dates">Sept 2026 – Dec 2027 (expected)</p>
         </div>
+      </div>
+      <div class="course-section">
+        <div class="course-section-label ml-label">Current Coursework</div>
+        <div class="course-row"><span class="course-code wide">CS 2823R</span><span class="course-name">Advanced Topics in Modern Machine Learning</span></div>
+        <div class="course-row"><span class="course-code wide">CS 2883R</span><span class="course-name">Advanced Topics in Computer Vision</span></div>
+        <div class="course-row"><span class="course-code wide">AC 215</span><span class="course-name">Advanced Practical Data Science (MLOps)</span></div>
       </div>
     </div>
 
@@ -208,21 +225,19 @@ Hi! I’m Ciro Zhang, a recent UCSD grad (B.S. Data Science & Computer Engineeri
     <div class="edu-card edu-anim">
       <div class="tl-dot active"></div>
       <div class="edu-card-header">
-        <div class="edu-initial ucsd-initial"><img src="assets/UCSD.png" alt="UCSD" /></div>
+        <div class="edu-initial ucsd-initial"><img src="assets/ucsd.png" alt="UCSD" /></div>
         <div class="edu-card-meta">
           <h3>UC San Diego</h3>
-          <p class="edu-degree">B.S. Data Science &amp; Computer Engineering</p>
+          <p class="edu-degree">B.S. Data Science &amp; Computer Engineering · Minor in History</p>
           <p class="edu-dates">Sept 2022 – June 2026</p>
         </div>
       </div>
       <div class="edu-courses-drawer" id="courses-drawer">
         <div class="edu-capstone">
-          <span class="edu-capstone-label">Senior Capstone</span>
-          <span class="edu-capstone-text">Communication Lower Bounds for Multi-Party Graph Traversal (Advisor: Dr. Shachar Lovett) &nbsp;<a href="https://rybplayer.github.io/capstone/" target="_blank" rel="noopener noreferrer" class="edu-capstone-link">Site →</a></span>
+          <span class="edu-capstone-text"><span class="edu-capstone-title"><span class="edu-capstone-kicker">Senior Capstone:</span> Communication Lower Bounds for Multi-Party Graph Traversal <span class="edu-capstone-mentor">(Mentor: Dr. Shachar Lovett)</span></span><span class="edu-capstone-desc">We studied how much communication a group of players needs to find a path through a graph when each player only holds part of it. Using a novel graph-gadget reduction from two-party Set Disjointness, we proved an Ω(n) lower bound that holds even with public randomness. In other words, there is mathematically no clever general solution: the players can't do meaningfully better than sending everything to one player.</span><span class="edu-capstone-links"><a href="https://rybplayer.github.io/capstone/" target="_blank" rel="noopener noreferrer" class="edu-capstone-link">Site →</a><a href="https://github.com/rybplayer/DSCCapstone/blob/00ad599fda0a16f41ad0217162537231c6438c74/q2_report/final_report.pdf" target="_blank" rel="noopener noreferrer" class="edu-capstone-link">Report →</a><a href="https://www.youtube.com/watch?v=cQVy9RcXCdU" target="_blank" rel="noopener noreferrer" class="edu-capstone-link">Pitch video →</a></span></span>
         </div>
         <div class="edu-capstone">
-          <span class="edu-capstone-label">Honor Society</span>
-          <span class="edu-capstone-text">IEEE-HKN Eta Kappa Nu at UCSD  (Kappa Psi Chapter) </span>
+          <span class="edu-capstone-text"><span class="edu-capstone-title">Honor Society: IEEE-HKN Eta Kappa Nu, Kappa Psi Chapter (Officer)</span><span class="edu-capstone-desc">As an officer, I helped run chapter events for engineering students, including HARD Hack (San Diego's largest hardware hackathon), ECE Day workshops, and Triton Day tabling for newly admitted students, along with social events, campus tours, and community outreach.</span><span class="edu-capstone-links"><a href="https://hkn.ucsd.edu" target="_blank" rel="noopener noreferrer" class="edu-capstone-link">Chapter site →</a><a href="https://www.linkedin.com/posts/hkn-ucsd_hkn-kappa-psi-had-a-fun-and-exciting-time-ugcPost-7189657709879660545-J77e" target="_blank" rel="noopener noreferrer" class="edu-capstone-link">Event recap →</a></span></span>
         </div>
         <div class="edu-drawer-section-label">Coursework</div>
         <div class="courses-cols">
@@ -295,30 +310,29 @@ Hi! I’m Ciro Zhang, a recent UCSD grad (B.S. Data Science & Computer Engineeri
 
   </div>
 
-  <h2 class="reveal delay-4" id="experiences">Experiences <span class="mem-addr">0x3000</span></h2>
+  <h2 class="reveal delay-4" id="experiences">Experience <span class="mem-addr">0x3000</span></h2>
   <div class="research-list">
 
     <div class="research-item gsap-card">
-      <div class="tl-dot active"></div>
+      <div class="tl-dot"></div>
       <div class="research-meta">
-        <span class="research-status active">Active</span>
-        <span class="research-date">Dec 2025 – Present</span>
+        <span class="research-date">Dec 2025 – Mar 2026</span>
       </div>
-      <a href="https://ece.ucsd.edu" target="_blank" rel="noopener noreferrer" class="research-logo"><img src="assets/ucsdECE.png" alt="UCSD ECE" /></a>
-      <h3>GenAI Researcher</h3>
+      <a href="https://ece.ucsd.edu" target="_blank" rel="noopener noreferrer" class="research-logo"><img src="assets/ucsdece.png" alt="UCSD ECE" /></a>
+      <h3>Research Intern</h3>
       <p class="research-advisor">Electrical &amp; Computer Engineering · UC San Diego (Advisor: Dr. Pengtao Xie)</p>
-      <p>Developing GeneChat, a multimodal LLM that generates interpretable gene explanations from DNA sequences. The model uses a hybrid DNABERT + Vicuna-13B architecture trained on 100k+ gene sequences on A100 GPUs, and is benchmarked against GPT-4o, LLaMA 3, and Gemini on gene function prediction tasks.</p>
+      <p>Developed GeneChat, a multimodal LLM that generates interpretable gene explanations from DNA sequences. The model uses a hybrid DNABERT + Vicuna-13B architecture trained on 100k+ gene sequences on A100 GPUs, and was benchmarked against GPT-4o, LLaMA 3, and Gemini on gene function prediction tasks.</p>
     </div>
 
     <div class="research-item gsap-card">
       <div class="tl-dot"></div>
       <div class="research-meta">
-        <span class="research-date">Jan 2025 – Jan 2026</span>
+        <span class="research-date">Jan 2025 – Dec 2025</span>
       </div>
       <a href="https://scripps.ucsd.edu" target="_blank" rel="noopener noreferrer" class="research-logo"><img src="assets/scrips.png" alt="Scripps" /></a>
-      <h3>ML Researcher</h3>
+      <h3>Research Intern</h3>
       <p class="research-advisor">Scripps Institution of Oceanography · UC San Diego (Advisor: Dr. George Sugihara)</p>
-      <p>Developed EDM-LSTM, a hybrid model combining empirical dynamic modeling with LSTM for ocean bioluminescence forecasting. Trained on 1,000+ weeks of San Diego ocean data and achieved a 23% AUC improvement over standalone EDM and LSTM baselines.</p>
+      <p>Developed EDM-CNN-LSTM, a hybrid model that conditions a neural forecaster on empirical dynamic modeling embeddings to predict bioluminescent algal blooms. Trained on 1,000+ weeks of San Diego ocean data, it improved mean PR-AUC from 0.171 to 0.552 over a standard LSTM.</p>
     </div>
 
     <div class="research-item gsap-card">
@@ -328,7 +342,7 @@ Hi! I’m Ciro Zhang, a recent UCSD grad (B.S. Data Science & Computer Engineeri
       </div>
       <a href="https://www.bccancer.bc.ca" target="_blank" rel="noopener noreferrer" class="research-logo"><img src="assets/bccancer.png" alt="BC Cancer" /></a>
       <h3>Data Engineering Intern</h3>
-      <p class="research-advisor">BC Cancer Agency</p>
+      <p class="research-advisor">BC Cancer Agency (Advisors: Dr. Chen Zhou &amp; Dr. Gang Wang)</p>
       <p>Worked on bioinformatics data pipelines, writing Groovy automation scripts inside Nextflow to preprocess cellular and gene expression datasets. Built Python tooling to detect and fix formatting issues across large experimental files, and used QuPath pipelines to extract quantitative features from cell imaging data.</p>
     </div>
 
@@ -337,8 +351,8 @@ Hi! I’m Ciro Zhang, a recent UCSD grad (B.S. Data Science & Computer Engineeri
       <div class="research-meta">
         <span class="research-date">Jun 2024 – Jun 2025</span>
       </div>
-      <a href="https://tea.ece.ubc.ca/s" target="_blank" rel="noopener noreferrer" class="research-logo"><img src="assets/teaLab.jpg" alt="Tea Labs" /></a>
-      <h3>CV Researcher</h3>
+      <a href="https://tea.ece.ubc.ca/" target="_blank" rel="noopener noreferrer" class="research-logo"><img src="assets/tealab.jpg" alt="Tea Labs" /></a>
+      <h3>Research Intern</h3>
       <p class="research-advisor">Tea Labs · University of British Columbia (Advisor: Dr. Li Xiaoxiao)</p>
       <p>Built CV pipelines for whole-slide imaging (WSI) pathology analysis using YOLO. Designed a multi-stage slide processing pipeline covering blur/edge filtering, patch extraction, and parallel GPU inference. Also developed semi-supervised dataset pipelines to scale model training despite limited expert annotations.</p>
     </div>
@@ -354,25 +368,276 @@ Hi! I’m Ciro Zhang, a recent UCSD grad (B.S. Data Science & Computer Engineeri
       <p>Built an automated pipeline to scrape and analyze trending keywords from Tencent platforms, studying factors that drive online charitable donations. Integrated LLM APIs to generate structured trend reports and automatically publish findings to Feishu Sheets.</p>
     </div>
 
+    <div class="research-item gsap-card">
+      <div class="tl-dot"></div>
+      <div class="research-meta">
+        <span class="research-date">Apr 2020 – Mar 2022</span>
+      </div>
+      <a href="https://www.bccancer.bc.ca" target="_blank" rel="noopener noreferrer" class="research-logo"><img src="assets/bccancer.png" alt="BC Cancer" /></a>
+      <h3>Research Volunteer</h3>
+      <p class="research-advisor">BC Cancer Agency (Advisors: Dr. Chen Zhou &amp; Dr. Gang Wang)</p>
+      <p>Ran QuPath image-analysis pipelines on digitized tissue microarrays from 72 triple-negative breast cancer cases, turning pathologist annotations into cell-level measurements of CD8+ and CD4+ lymphocyte infiltration.</p>
+    </div>
+
   </div>
 
-  <h2 class="reveal delay-4" id="teaching">Teaching <span class="mem-addr">0x4000</span></h2>
+  <h2 class="reveal delay-4" id="publications">Publications <span class="mem-addr">0x4000</span></h2>
+  <div class="research-list">
+
+    <div class="research-item gsap-card has-figure">
+      <div class="tl-dot active"></div>
+      <div class="pub-text">
+        <div class="research-meta">
+          <span class="research-date">2026</span>
+          <span class="research-status review">Under Review · AAAI</span>
+        </div>
+        <h3>Birdseye: 3D Badminton Analysis from Monocular Video</h3>
+        <p class="research-advisor"><strong>Zhang C</strong></p>
+        <p>End-to-end CV system that reconstructs full badminton rallies in 3D from a single camera. Court calibration seeds RANSAC with VGGT focal-length estimates, players are lifted to 3D SMPL meshes with ray-cast ground correction, and a transformer over 3D skeleton motion detects hits and classifies 12 shot types.</p>
+      </div>
+      <div class="pub-side">
+        <a href="assets/fig-birdseye.jpg" target="_blank" rel="noopener noreferrer" class="pub-figure"><img src="assets/fig-birdseye.jpg" alt="Birdseye 3D reconstruction of a badminton rally next to the source broadcast frame" loading="lazy" /></a>
+        <div class="project-links pub-side-links">
+          <a href="https://github.com/CiroZhang/Birdseye" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
+          <a href="https://cirozhang.github.io/Birdseye/" target="_blank" rel="noopener noreferrer" class="project-link">Demo →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="research-item gsap-card has-figure">
+      <div class="tl-dot active"></div>
+      <div class="pub-text">
+        <div class="research-meta">
+          <span class="research-date">2026</span>
+          <span class="research-status review">Under Review · WACV</span>
+        </div>
+        <h3>SlideBank: A Persistent Hierarchical Evidence Bank for Consistent Whole-Slide Reasoning</h3>
+        <p class="research-advisor">Zhao B, Huang G, <strong>Zhang C</strong>, Li A, Tan Y, Zhou C, Wang G, Gao Z, Li X</p>
+        <p>Training-free framework that turns each gigapixel pathology slide into a persistent, concept-indexed evidence bank grounded to patch coordinates. Questions are routed to relevant evidence and resolved by multi-scale consensus, so vision-language models answer consistently and banks are reused across queries to cut inference cost.</p>
+      </div>
+      <div class="pub-side">
+        <a href="assets/fig-slidebank.jpg" target="_blank" rel="noopener noreferrer" class="pub-figure"><img src="assets/fig-slidebank.jpg" alt="SlideBank overview: building a hierarchical evidence bank from a whole-slide image, reasoning over it, and reusing it across queries" loading="lazy" /></a>
+        <div class="project-links pub-side-links">
+          <a href="https://arxiv.org/abs/2609.00342" target="_blank" rel="noopener noreferrer" class="project-link">arXiv →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="research-item gsap-card">
+      <div class="tl-dot active"></div>
+      <div class="research-meta">
+        <span class="research-date">2026</span>
+        <span class="research-status review">Under Review · ICLR</span>
+      </div>
+      <h3>UltraVR: A Diagnostic Ultra-Resolution Image–VQA Benchmark for Evidence-Grounded Reasoning</h3>
+      <p class="research-advisor">Huang G, Yang Y, Kang M, Zhao B, Zhou J, <strong>Zhang C</strong>, Zhou C, Wang G, Gao Z, Li X</p>
+      <p class="pub-desc">Benchmark for evidence-grounded reasoning over ultra-resolution images across CCTV surveillance, remote sensing, pathology whole-slide images, and industrial anomaly detection. Every question comes with a step-level ground-truth reasoning chain, so it shows where vision-language models fail, not just whether they do. Frontier models struggle most with locating and perceiving the right evidence.</p>
+    </div>
+
+    <div class="research-item gsap-card">
+      <div class="tl-dot active"></div>
+      <div class="research-meta">
+        <span class="research-date">2026</span>
+        <span class="research-status review">Under Review · NeurIPS Workshop</span>
+      </div>
+      <h3>Predicting Bioluminescent Algal Blooms by Conditioning Neural Forecasts on Reconstructed Dynamics</h3>
+      <p class="research-advisor">Paraselli A, <strong>Zhang C</strong>, Carter ML, Sugihara G</p>
+      <p class="pub-desc">Conditions a CNN–LSTM on state-space embeddings from Empirical Dynamic Modeling to forecast bioluminescent red tides along the Southern California coast, improving mean PR-AUC from 0.171 to 0.552 over a standard LSTM.</p>
+    </div>
+
+    <div class="research-item gsap-card has-figure">
+      <div class="tl-dot"></div>
+      <div class="pub-text">
+        <div class="research-meta">
+          <span class="research-date">2022</span>
+          <span class="research-status published">Published · 12 citations</span>
+        </div>
+        <h3>Histological subtype is associated with PD-L1 expression and CD8+ T-cell infiltrates in triple-negative breast carcinoma</h3>
+        <p class="research-advisor">Annals of Diagnostic Pathology · Salisbury T, Abozina A, <strong>Zhang C</strong>, Mao E, Banyi N, Leo J, Ionescu D, Zhou C, Wang G</p>
+        <p>Investigated the relationship between tumor histological subtypes and immune markers (PD-L1 expression, CD8+ T-cell infiltration) across 72 triple-negative breast carcinoma cases, identifying subtype-specific patterns with implications for immunotherapy response prediction.</p>
+        <div class="project-links" style="margin-top:12px;">
+          <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=BTYAUvoAAAAJ&citation_for_view=BTYAUvoAAAAJ:u5HHmVD_uO8C" target="_blank" rel="noopener noreferrer" class="project-link">Google Scholar →</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/35091156/" target="_blank" rel="noopener noreferrer" class="project-link">PubMed →</a>
+        </div>
+      </div>
+      <a href="assets/fig-histological.jpg" target="_blank" rel="noopener noreferrer" class="pub-figure"><img src="assets/fig-histological.jpg" alt="Scatter plots of tumor-infiltrating lymphocytes against CD8+ and CD4+ lymphocyte percentages" loading="lazy" /></a>
+    </div>
+
+  </div>
+
+  <h2 class="reveal delay-4" id="projects">Team Projects <span class="mem-addr">0x5000</span></h2>
+  <div class="projects">
+
+    <div class="project-card gsap-card">
+      <div class="project-card-logo"><img src="assets/dsc10practice.png" alt="DSC10 Practice" /></div>
+      <div class="project-header">
+        <h3>DSC10 Practice Platform</h3>
+        <span class="project-tag">Python • Pandoc • BeautifulSoup • Educational Tool</span>
+      </div>
+      <p>Practice problem platform for UCSD's DSC 10 course hosting past exams and discussion materials. Built LaTeX-to-Markdown conversion tools and standardized problem formatting system.</p>
+      <div class="project-links">
+        <a href="https://practice.dsc10.com/" target="_blank" rel="noopener noreferrer" class="project-link">Visit Site →</a>
+      </div>
+    </div>
+
+    <div class="project-card gsap-card">
+      <div class="project-card-logo"><img src="assets/hkn.png" alt="HKN" /></div>
+      <div class="project-header">
+        <h3>HAB Forecasting: Harmful Algal Bloom Prediction (WIP)</h3>
+         <span class="project-tag">Python • EDM–LSTM • Time-Series Forecasting • Oceanographic Data</span>
+      </div>
+      <p>Developed and deployed a web platform with the HKN project team for forecasting bioluminescent harmful algal blooms (HABs) at UCSD Scripps, integrating our EDM–LSTM model with real-time coastal monitoring data.</p>
+      <div class="project-links">
+        <a href="https://coollab2.sioword.ucsd.edu/hab-bioluminence-predictions/" target="_blank" rel="noopener noreferrer" class="project-link">Visit Site →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <h2 class="reveal delay-4">Personal Projects <span class="mem-addr">0x6000</span></h2>
+  <div class="video-gallery">
+
+    <div class="video-card gsap-card" data-index="0001">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/jjB-xDtmhq8" title="Paper Reader" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+      </div>
+      <div class="video-info">
+        <div class="project-header">
+          <h3>Paper Reader: Document AI Pipeline</h3>
+          <span class="project-tag">Python • YOLO • PyMuPDF • BERT</span>
+        </div>
+        <p>Built a pipeline to convert research PDFs into structured Markdown/JSON datasets. Applied DocLayNet (YOLO) for layout detection and PyMuPDF for text/figure extraction. Reduced noise using regex + BERT-based filtering.</p>
+        <div class="project-links">
+          <a href="https://github.com/CiroZhang/paper_reader" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-card gsap-card" data-index="0008">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/MSVF8AxzZUk" title="TinyRISC-9: Custom 9-bit ISA CPU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+      </div>
+      <div class="video-info">
+        <div class="project-header">
+          <h3>TinyRISC-9: Custom 9-bit ISA CPU</h3>
+          <span class="project-tag">SystemVerilog • Python • Assembly</span>
+        </div>
+        <p>Built a fully custom CPU from scratch in SystemVerilog — 9-bit ISA, 8-bit data path, 8 registers, 14 opcodes. Designed the entire architecture under tight constraints, then wrote assembly programs that pushed its limits: a Hamming distance analyzer, an arithmetic range finder, and a 32-bit signed multiplier packed into dual 8-bit registers.</p>
+        <div class="project-links">
+          <a href="https://github.com/CiroZhang/isa-cpu-project" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-card gsap-card" data-index="0002">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/x1i6cRyJ0fU" title="Gmail Replier" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+      </div>
+      <div class="video-info">
+        <div class="project-header">
+          <h3>Gmail Replier: LLM Auto-Reply Bot</h3>
+          <span class="project-tag">Python • OpenAI API • Gmail API • OAuth</span>
+        </div>
+        <p>Python service that scans Gmail and drafts replies with OpenAI or Ollama, supporting dry-run and safe-prompt modes. Integrated Gmail API with OAuth, custom labels, and robust error-handling with exponential backoff.</p>
+        <div class="project-links">
+          <a href="https://github.com/CiroZhang/gmail_replier" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="more-projects" id="more-projects">
+    <div class="video-gallery">
+
+      <div class="video-card gsap-card" data-index="0005">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/_-Iog7sBY0Y" title="Wiki-Graph-Explorer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <div class="project-header">
+            <h3>Wiki-Graph-Explorer: Wikipedia BFS Game</h3>
+            <span class="project-tag">Svelte • D3.js • Graph Algorithms</span>
+          </div>
+          <p>Interactive web app that visualizes paths between Wikipedia articles using BFS graph traversal. Built with Svelte and D3 for dynamic graph visualization. Includes data processing pipeline with Jupyter notebooks for Wikipedia article parsing.</p>
+          <div class="project-links">
+            <a href="https://github.com/TQZhang04/wikipedia-game-bfs" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
+            <a href="https://tqzhang04.github.io/wikipedia-game-bfs/" target="_blank" rel="noopener noreferrer" class="project-link">Play Game →</a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="video-card gsap-card" data-index="0003">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/zkjLWrAZbpU" title="Fish Game" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <div class="project-header">
+            <h3>Fish Game: HTML5 Jumping Game</h3>
+            <span class="project-tag">JavaScript • HTML5 Canvas</span>
+          </div>
+          <p>Browser-based jumping game built with vanilla JavaScript and HTML5 Canvas. Features custom physics engine, camera system, and procedurally generated environments. Deployed on GitHub Pages for instant play.</p>
+          <div class="project-links">
+            <a href="https://github.com/CiroZhang/jumping_game" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
+            <a href="https://cirozhang.github.io/jumping_game/" target="_blank" rel="noopener noreferrer" class="project-link">Play Game →</a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="video-card gsap-card" data-index="0006">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/onHAY8Da6oI" title="Slice" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <div class="project-header">
+            <h3>Slice: Android Bill Splitting App</h3>
+            <span class="project-tag">Java • Android • Gradle</span>
+          </div>
+          <p>Android app for splitting bills among groups. Built with Java using Android Studio with 120+ commits. Features user-friendly interface for tracking expenses and calculating individual shares.</p>
+          <div class="project-links">
+            <a href="https://github.com/SunbathingFish/billSplit_app" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="video-card gsap-card" data-index="0007">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/v9uu0OD_uUM" title="OneTouch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <div class="project-header">
+            <h3>OneTouch: Android Shortcut Widget</h3>
+            <span class="project-tag">Java • Android • Widgets</span>
+          </div>
+          <p>Android widget app providing quick shortcuts and one-tap actions. Built with Java for Android, featuring customizable widgets for improved productivity and quick access to frequently used functions.</p>
+          <div class="project-links">
+            <a href="https://github.com/SunbathingFish/WidgetApp" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  <button class="more-projects-toggle" id="more-projects-toggle" aria-expanded="false" aria-controls="more-projects">
+    <span class="more-projects-label">Show 4 more projects</span> <span class="toggle-arrow">▾</span>
+  </button>
+
+  <h2 class="reveal delay-4" id="teaching">Teaching <span class="mem-addr">0x7000</span></h2>
   <div class="teaching-timeline">
 
     <div class="tl-item gsap-card">
-      <div class="tl-dot active"></div>
+      <div class="tl-dot"></div>
       <div class="tl-body">
         <div class="tl-top">
           <a href="https://dsc-courses.github.io/dsc80-2026-wi/" target="_blank" rel="noopener noreferrer" class="tl-code">DSC 80</a>
-          <span class="tl-status active">Active</span>
         </div>
         <div class="tl-name">Practice and Application of Data Science</div>
         <div class="tl-meta">
           <span class="tl-role">Instructional Assistant</span>
           <span class="tl-sep">·</span>
-          <span class="tl-dates">Sept 2025 – Present</span>
+          <span class="tl-dates">Sept 2025 – Jun 2026</span>
           <span class="tl-sep">·</span>
-          <span class="tl-terms">1 term</span>
+          <span class="tl-terms">3 terms</span>
         </div>
       </div>
     </div>
@@ -413,206 +678,9 @@ Hi! I’m Ciro Zhang, a recent UCSD grad (B.S. Data Science & Computer Engineeri
 
   </div>
 
-  <h2 class="reveal delay-4" id="publications">Publications <span class="mem-addr">0x4500</span></h2>
-  <div class="research-list">
-
-    <div class="research-item gsap-card">
-      <div class="tl-dot"></div>
-      <div class="research-meta">
-        <span class="research-date">2022</span>
-        <span class="research-status" style="background:rgba(6,182,212,0.15);color:var(--accent-secondary);border:1px solid var(--accent-secondary);">12 citations</span>
-      </div>
-      <h3>Histological subtype is associated with PD-L1 expression and CD8+ T-cell infiltrates in triple-negative breast carcinoma</h3>
-      <p class="research-advisor">Annals of Diagnostic Pathology · Salisbury T, Abozina A, <strong>Zhang C</strong>, Mao E, Banyi N, Leo J, Ionescu D, Zhou C, Wang G</p>
-      <p>Investigated the relationship between tumor histological subtypes and immune markers (PD-L1 expression, CD8+ T-cell infiltration) across 72 triple-negative breast carcinoma cases, identifying subtype-specific patterns with implications for immunotherapy response prediction.</p>
-      <div class="project-links" style="margin-top:12px;">
-        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=BTYAUvoAAAAJ&citation_for_view=BTYAUvoAAAAJ:u5HHmVD_uO8C" target="_blank" rel="noopener noreferrer" class="project-link">Google Scholar →</a>
-      </div>
-    </div>
-
-  </div>
-
-  <h2 class="reveal delay-4" id="projects">Bigger Group Projects <span class="mem-addr">0x5000</span></h2>
-  <div class="projects">
-
-    <div class="project-card gsap-card">
-      <div class="project-card-logo"><img src="assets/dsc10practice.png" alt="DSC10 Practice" /></div>
-      <div class="project-header">
-        <h3>DSC10 Practice Platform</h3>
-        <span class="project-tag">Python • Pandoc • BeautifulSoup • Educational Tool</span>
-      </div>
-      <p>Practice problem platform for UCSD's DSC 10 course hosting past exams and discussion materials. Built LaTeX-to-Markdown conversion tools and standardized problem formatting system.</p>
-      <div class="project-links">
-        <a href="https://practice.dsc10.com/" class="project-link">Visit Site →</a>
-      </div>
-    </div>
-
-    <div class="project-card gsap-card">
-      <div class="project-card-logo"><img src="assets/hkn.png" alt="HKN" /></div>
-      <div class="project-header">
-        <h3>HAB Forecasting: Harmful Algal Bloom Prediction (WIP)</h3>
-         <span class="project-tag">Python • EDM–LSTM • Time-Series Forecasting • Oceanographic Data</span>
-      </div>
-      <p>Developed and deployed a web platform with the HKN project team for forecasting bioluminescent harmful algal blooms (HABs) at UCSD Scripps, integrating our EDM–LSTM model with real-time coastal monitoring data.</p>
-      <div class="project-links">
-        <a href="https://coollab2.sioword.ucsd.edu/hab-bioluminence-predictions/" class="project-link">Visit Site →</a>
-      </div>
-    </div>
-
-  </div>
-
-  <h2 class="reveal delay-4">Personal Projects <span class="mem-addr">0x6000</span></h2>
-  <div class="video-gallery">
-
-    <div class="video-card gsap-card" data-index="0001">
-      <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/jjB-xDtmhq8" title="Paper Reader" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="video-info">
-        <div class="project-header">
-          <h3>Paper Reader: Document AI Pipeline</h3>
-          <span class="project-tag">Python • YOLO • PyMuPDF • BERT</span>
-        </div>
-        <p>Built a pipeline to convert research PDFs into structured Markdown/JSON datasets. Applied DocLayNet (YOLO) for layout detection and PyMuPDF for text/figure extraction. Reduced noise using regex + BERT-based filtering.</p>
-        <div class="project-links">
-          <a href="https://github.com/CiroZhang/paper_reader" class="project-link">GitHub →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="video-card gsap-card" data-index="0002">
-      <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/x1i6cRyJ0fU" title="Gmail Replier" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="video-info">
-        <div class="project-header">
-          <h3>Gmail Replier: LLM Auto-Reply Bot</h3>
-          <span class="project-tag">Python • OpenAI API • Gmail API • OAuth</span>
-        </div>
-        <p>Python service that scans Gmail and drafts replies with OpenAI or Ollama, supporting dry-run and safe-prompt modes. Integrated Gmail API with OAuth, custom labels, and robust error-handling with exponential backoff.</p>
-        <div class="project-links">
-          <a href="https://github.com/CiroZhang/gmail_replier" class="project-link">GitHub →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="video-card gsap-card" data-index="0003">
-      <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/zkjLWrAZbpU" title="Fish Game" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="video-info">
-        <div class="project-header">
-          <h3>Fish Game: HTML5 Jumping Game</h3>
-          <span class="project-tag">JavaScript • HTML5 Canvas</span>
-        </div>
-        <p>Browser-based jumping game built with vanilla JavaScript and HTML5 Canvas. Features custom physics engine, camera system, and procedurally generated environments. Deployed on GitHub Pages for instant play.</p>
-        <div class="project-links">
-          <a href="https://github.com/CiroZhang/jumping_game" class="project-link">GitHub →</a>
-          <a href="https://cirozhang.github.io/jumping_game/" class="project-link">Play Game →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="video-card gsap-card" data-index="0005">
-      <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/_-Iog7sBY0Y" title="Wiki-Graph-Explorer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="video-info">
-        <div class="project-header">
-          <h3>Wiki-Graph-Explorer: Wikipedia BFS Game</h3>
-          <span class="project-tag">Svelte • D3.js • Graph Algorithms</span>
-        </div>
-        <p>Interactive web app that visualizes paths between Wikipedia articles using BFS graph traversal. Built with Svelte and D3 for dynamic graph visualization. Includes data processing pipeline with Jupyter notebooks for Wikipedia article parsing.</p>
-        <div class="project-links">
-          <a href="https://github.com/TQZhang04/wikipedia-game-bfs" class="project-link">GitHub →</a>
-          <a href="https://tqzhang04.github.io/wikipedia-game-bfs/" class="project-link">Play Game →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="video-card gsap-card" data-index="0006">
-      <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/onHAY8Da6oI" title="Slice" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="video-info">
-        <div class="project-header">
-          <h3>Slice: Android Bill Splitting App</h3>
-          <span class="project-tag">Java • Android • Gradle</span>
-        </div>
-        <p>Android app for splitting bills among groups. Built with Java using Android Studio with 120+ commits. Features user-friendly interface for tracking expenses and calculating individual shares.</p>
-        <div class="project-links">
-          <a href="https://github.com/SunbathingFish/billSplit_app" class="project-link">GitHub →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="video-card gsap-card" data-index="0007">
-      <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/v9uu0OD_uUM" title="OneTouch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="video-info">
-        <div class="project-header">
-          <h3>OneTouch: Android Shortcut Widget</h3>
-          <span class="project-tag">Java • Android • Widgets</span>
-        </div>
-        <p>Android widget app providing quick shortcuts and one-tap actions. Built with Java for Android, featuring customizable widgets for improved productivity and quick access to frequently used functions.</p>
-        <div class="project-links">
-          <a href="https://github.com/SunbathingFish/WidgetApp" class="project-link">GitHub →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="video-card gsap-card" data-index="0008">
-      <div class="video-wrapper">
-        <div class="video-placeholder">
-          <div class="vp-inner">
-            <div class="vp-rec"><span class="vp-rec-dot"></span>REC</div>
-            <div class="vp-label">VIDEO_PENDING.mp4</div>
-            <div class="vp-sub">// shoot_video.sh — not yet executed</div>
-            <div class="vp-cursor"></div>
-          </div>
-        </div>
-      </div>
-      <div class="video-info">
-        <div class="project-header">
-          <h3>Custom 9-bit ISA CPU <span class="badge-new">NEW</span></h3>
-          <span class="project-tag">SystemVerilog • Python • Assembly</span>
-        </div>
-        <p>Built a fully custom CPU from scratch in SystemVerilog — 9-bit ISA, 8-bit data path, 8 registers, 14 opcodes. Designed the entire architecture under tight constraints, then wrote assembly programs that pushed its limits: a Hamming distance analyzer, an arithmetic range finder, and a 32-bit signed multiplier packed into dual 8-bit registers.</p>
-        <div class="project-links">
-          <a href="https://github.com/CiroZhang/isa-cpu-project" class="project-link">GitHub →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="video-card gsap-card" data-index="0009">
-      <div class="video-wrapper">
-        <div class="video-placeholder">
-          <div class="vp-inner">
-            <div class="vp-rec"><span class="vp-rec-dot"></span>REC</div>
-            <div class="vp-label">VIDEO_PENDING.mp4</div>
-            <div class="vp-sub">// shoot_video.sh — not yet executed</div>
-            <div class="vp-cursor"></div>
-          </div>
-        </div>
-      </div>
-      <div class="video-info">
-        <div class="project-header">
-          <h3>YouTube Audio Downloader <span class="badge-new">NEW</span></h3>
-          <span class="project-tag">Python • Flask • PyInstaller • HTML</span>
-        </div>
-        <p>Desktop app for extracting and downloading audio from YouTube videos. Web-based interface where users paste a URL and get the audio file back. Packaged as a standalone executable with PyInstaller — no Python install required to run.</p>
-        <div class="project-links">
-          <a href="https://github.com/CiroZhang/youtube_audio_downloader" class="project-link">GitHub →</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
   <footer class="reveal delay-5">
     <div>kernel 6.0 · uptime <span id="uptime">0s</span> · faults 1</div>
-    <div>UCSD '26 · DS + CE → Harvard S.M. '27</div>
+    <div>UCSD '26 · DS + CE → Harvard S.M. Data Science</div>
   </footer>
 </div>
 
