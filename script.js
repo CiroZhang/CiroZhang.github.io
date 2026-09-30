@@ -528,6 +528,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSmoothScroll();
   initKonamiCode();
   setTimeout(initFocusBlocks, 2000);
+  initCitationCounts();
 });
 
 // ========================================
@@ -1763,5 +1764,22 @@ function initVanillaTilt() {
   });
   VanillaTilt.init(document.querySelectorAll('.teaching-item'), {
     max: 4, speed: 600, glare: false, scale: 1.01, perspective: 1500,
+  });
+}
+
+// ========================================
+// Live Citation Counts (Semantic Scholar)
+// ========================================
+function initCitationCounts() {
+  document.querySelectorAll('[data-paper]').forEach(async (el) => {
+    const count = el.querySelector('.cite-count');
+    if (!count) return;
+    try {
+      const res = await fetch(`https://api.semanticscholar.org/graph/v1/paper/${el.dataset.paper}?fields=citationCount`);
+      if (!res.ok) return; // keep the hardcoded fallback
+      const { citationCount: n } = await res.json();
+      if (typeof n !== 'number') return;
+      count.textContent = n > 0 ? ` · ${n} citation${n === 1 ? '' : 's'}` : '';
+    } catch (_) { /* offline or rate-limited: keep fallback */ }
   });
 }
