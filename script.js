@@ -1151,7 +1151,7 @@ S.M. Data Science @ Harvard · B.S. DS & CE @ UCSD '26
 Building ML systems end to end: 3D computer vision for
 sports analytics (Birdseye, under review at AAAI),
 vision-language reasoning over pathology slides
-(SlideBank, under review at WACV), and multimodal LLMs
+(SlideBank, preprint on arXiv), and multimodal LLMs
 for genomics. Published in Annals of Diagnostic
 Pathology. TAed 600+ students across ML and data
 science courses at UCSD.`;
